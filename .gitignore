@@ -1,0 +1,8 @@
+#ignore node modules
+/node_modules
+
+#ignore app builds
+/out
+
+#ignore public, distributed from mercury-playground
+/public
