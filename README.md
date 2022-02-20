@@ -2,7 +2,7 @@
 
 This is Electron code to generate a standalone version of the Mercury Playground web app.
 
-# How to build the App yourself 
+## How to build the App yourself 
 
 1. `$ git clone http://github.com/tmhglnd/mercury-app`
 
