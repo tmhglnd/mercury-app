@@ -1,5 +1,5 @@
 
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, dialog } = require('electron');
 
 const createWindow = () => {
 	const win = new BrowserWindow({
@@ -13,6 +13,21 @@ const createWindow = () => {
 
 	win.loadFile('public/index.html');
 	// win.setMenuBarVisibility(false);
+
+	win.webContents.on('will-prevent-unload', (event) => {
+		const choice = dialog.showMessageBoxSync(win, {
+			type: 'question',
+			buttons: ['Quit', 'Stay'],
+			title: 'Do you want to quit?',
+			message: 'Code will be lost if you quit. Are you sure?',
+			defaultId: 0,
+			cancelId: 1
+		})
+		const leave = (choice === 0)
+		if (leave) {
+			event.preventDefault()
+		}
+	})
 }
 
 app.setName('Mercury Playground');
