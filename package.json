@@ -1,7 +1,7 @@
 {
   "name": "mercury-electron",
   "productName": "Mercury",
-  "version": "1.4.0",
+  "version": "1.8.0",
   "description": "The Mercury Playground standalone Electron App",
   "main": "index.js",
   "scripts": {
